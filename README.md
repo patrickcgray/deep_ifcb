@@ -1,4 +1,4 @@
-# deep_ifcb
+# A Deep Learning Pipeline for Classifying Imaging Flow Cytobot Imagery
 
 Environment Setup:
 
