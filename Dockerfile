@@ -1,6 +1,8 @@
 FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 MAINTAINER Patrick Gray <pgrayobx@gmail.com>
 
+### setup conda
+
 ENV PATH="/root/miniconda3/bin:${PATH}"
 ARG PATH="/root/miniconda3/bin:${PATH}"
 RUN apt-get update
@@ -18,9 +20,11 @@ RUN conda --version
 #RUN apt update
 #RUN apt install libgl1-mesa-glx
 
-#ADD environment.yml /tmp/environment.yml
-#RUN conda env create -f /tmp/environment.yml
+### install the environment with conda
+
+ADD environment.yml /tmp/environment.yml
+RUN conda env create -f /tmp/environment.yml
 
 # Pull the environment name out of the environment.yml
-#RUN echo "source activate $(head -1 /tmp/environment.yml | cut -d' ' -f2)" > ~/.bashrc
-#ENV PATH /opt/conda/envs/$(head -1 /tmp/environment.yml | cut -d' ' -f2)/bin:$PATH
+RUN echo "source activate $(head -1 /tmp/environment.yml | cut -d' ' -f2)" > ~/.bashrc
+ENV PATH /opt/conda/envs/$(head -1 /tmp/environment.yml | cut -d' ' -f2)/bin:$PATH

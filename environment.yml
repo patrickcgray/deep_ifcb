@@ -36,7 +36,6 @@ dependencies:
   - keras
   - defaults::scipy
   - pip:
-    - GPSPhoto
     - rio-toa
     - nc-time-axis
     - netCDF4
