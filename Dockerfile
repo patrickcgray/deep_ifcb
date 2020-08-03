@@ -21,6 +21,7 @@ RUN conda --version
 #RUN apt install libgl1-mesa-glx
 
 ### install the environment with conda
+# note that I'm installing keras-gpu 2.2.4 because my CUDA version is 10.0 but it could be changed easily to tf.keras on a different machine
 
 ADD environment.yml /tmp/environment.yml
 RUN conda env create -f /tmp/environment.yml

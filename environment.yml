@@ -33,7 +33,7 @@ dependencies:
   - scikit-learn
   - tqdm
   - xarray
-  - tensorflow-gpu
+  - keras-gpu==2.2.4
   - defaults::scipy
   - pip:
     - rio-toa
