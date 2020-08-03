@@ -1,6 +1,6 @@
-# deep_ifcb
+# A Deep Learning Pipeline for Classifying Imaging Flow Cytobot Imagery
 
-Environment Setup:
+## Environment Setup:
 
 `sudo docker build -t deepearthml .`
 
@@ -25,3 +25,17 @@ to get it back on terminal
 to start up jupyter
 
 `jupyter notebook --allow-root /host --ip 0.0.0.0`
+
+## Data Setup
+
+all data was downloading from the Box setup and merged 
+
+all labels and metadata were downloaded from EcoTaxa
+
+all IFCB images were unzipped and put into a single folder along with labels by doing
+
+```
+find . -name "*.zip" | while read filename; do unzip -o -d "`basename -s .zip "$filename"`" "$filename"; done;
+
+find . -mindepth 2 -type f -print -exec mv {} . \;
+```
