@@ -38,4 +38,21 @@ all IFCB images were unzipped and put into a single folder along with labels by 
 find . -name "*.zip" | while read filename; do unzip -o -d "`basename -s .zip "$filename"`" "$filename"; done;
 
 find . -mindepth 2 -type f -print -exec mv {} . \;
+
+```
+
+for the second load of data
+```
+find . -name "*.zip" | while read filename; do unzip -o -d "`basename -s .zip "$filename"`" "$filename"; done;
+
+find . -name "*import_all*.zip" -type f -print -exec mv {} . \;
+```
+then move them all to a dir called all_imagery
+
+then nav to there
+```
+find . -name "*.zip" | while read filename; do unzip -o -d "`basename -s .zip "$filename"`" "$filename"; done;
+
+find . -mindepth 2 -type f -print -exec mv {} . \;
+
 ```
