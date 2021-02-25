@@ -2,9 +2,13 @@
 
 ## Environment Setup:
 
+For env setup you can either use Docker or conda. I recommend conda for this case since it is typically easier to access GPU hardware without containerization but I have included the Docker in case you plan to spin this up in the cloud and need it.
+
 `sudo docker build -t deepearthml .`
 
 `sudo docker run --runtime=nvidia --name ifcbcont -p 8888:8888 -p 6006:6006 -v ~/:/host -v /media/clifgray:/datarepo -it deepearthml`
+
+sudo docker run --runtime=nvidia --name ifcbcont -p 8888:8888 -p 6006:6006 -v ~/:/host -it deepearthml
 
 if you have a newer version of nvidia-docker this may be:
 
