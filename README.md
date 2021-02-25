@@ -1,5 +1,11 @@
 # A Deep Learning Pipeline for Classifying Imaging Flow Cytobot Imagery
 
+## Running the Code:
+
+the two notebooks you need are:
+- python/model_development.ipynb for training the model and running assessments with the train/val data
+- python/model_predictions_and_analysis.ipynb for making predictions on an arbitrarily large dataset as well as pulling out random or balanced samples from large datasets and running assessments on it
+
 ## Environment Setup:
 
 For env setup you can either use Docker or conda. I recommend conda for this case since it is typically easier to access GPU hardware without containerization but I have included the Docker in case you plan to spin this up in the cloud and need it.
