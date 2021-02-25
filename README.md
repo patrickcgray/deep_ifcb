@@ -1,14 +1,23 @@
 # A Deep Learning Pipeline for Classifying Imaging Flow Cytobot Imagery
 
+This is a convolutional neural network for classifying IFCB imagery of plankton.
+
 ## Running the Code:
 
-the two notebooks you need are:
-- python/model_development.ipynb for training the model and running assessments with the train/val data
-- python/model_predictions_and_analysis.ipynb for making predictions on an arbitrarily large dataset as well as pulling out random or balanced samples from large datasets and running assessments on it
+The two notebooks you need are:
+- `python/model_development.ipynb` for training the model and running assessments with the train/val data
+- `python/model_predictions_and_analysis.ipynb` for making predictions on an arbitrarily large dataset as well as pulling out random or balanced samples from large datasets and running assessments on it
 
 ## Environment Setup:
 
-For env setup you can either use Docker or conda. I recommend conda for this case since it is typically easier to access GPU hardware without containerization but I have included the Docker in case you plan to spin this up in the cloud and need it.
+For env setup you can either use [Docker](https://www.docker.com/products/docker-desktop) or [conda](https://docs.anaconda.com/anaconda/install/). I recommend conda for this case since it is typically easier to access GPU hardware without containerization but I have included the Docker setup in case you plan to spin this up in the cloud and need it. 
+
+#### If you use conda all you need to do it run:
+
+`conda env create --name ifcb_env --file=environments.yml`
+
+
+#### If you use Docker these instructions should get you set up:
 
 `sudo docker build -t deepearthml .`
 
@@ -32,6 +41,8 @@ to get it back on terminal
 
 `sudo docker attach ifcbcont`
 
+#### Whether you are using conda or Docker once you've built the environment just run:
+
 to start up jupyter
 
 `jupyter notebook --allow-root /host --ip 0.0.0.0`
@@ -51,7 +62,7 @@ find . -mindepth 2 -type f -print -exec mv {} . \;
 
 ```
 
-for the second load of data
+for the second load of data I used
 ```
 find . -name "*.zip" | while read filename; do unzip -o -d "`basename -s .zip "$filename"`" "$filename"; done;
 
@@ -59,7 +70,7 @@ find . -name "*import_all*.zip" -type f -print -exec mv {} . \;
 ```
 then move them all to a dir called all_imagery
 
-then nav to there
+then nav to there unzip by running
 ```
 find . -name "*.zip" | while read filename; do unzip -o -d "`basename -s .zip "$filename"`" "$filename"; done;
 
