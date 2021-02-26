@@ -5,7 +5,7 @@ MAINTAINER Patrick Gray <pgrayobx@gmail.com>
 
 ENV PATH="/root/miniconda3/bin:${PATH}"
 ARG PATH="/root/miniconda3/bin:${PATH}"
-RUN apt-get update
+RUN apt-get update 
 
 RUN apt-get install -y wget && rm -rf /var/lib/apt/lists/*
 
