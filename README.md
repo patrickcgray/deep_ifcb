@@ -16,6 +16,10 @@ For env setup you can either use [Docker](https://www.docker.com/products/docker
 
 `conda env create --name ifcb_env --file=environments.yml`
 
+#### And then to run the notebooks just run:
+
+`jupyter notebook` 
+
 
 #### If you use Docker these instructions should get you set up:
 
@@ -41,7 +45,7 @@ to get it back on terminal
 
 `sudo docker attach ifcbcont`
 
-#### Whether you are using conda or Docker once you've built the environment just run:
+#### Once you've built it all in Docker run:
 
 to start up jupyter
 
