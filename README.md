@@ -2,6 +2,10 @@
 
 This is a convolutional neural network for classifying IFCB imagery of plankton.
 
+This code is for the Nardelli et al OCEANS 2021 conference paper: "Developing a convolutional neural network to classify phytoplankton images collected with an Imaging FlowCytobot along the West Antarctic Peninsula" https://doi.org/10.23919/OCEANS44145.2021.9706072
+
+and the Marine Technology Society Journal Nardelli et al paper "Developing a convolutional neural network to classify Antarctic phytoplankton images" which was solicited and is currently in prep.
+
 ## Running the Code:
 
 The two notebooks you need are:
